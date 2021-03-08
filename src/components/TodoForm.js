@@ -17,10 +17,12 @@ class TodoForm extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.addTask(this.state.newTask);
-    this.setState({
-      newTask: "",
-    });
+    if (this.state.newTask) {
+      this.props.addTask(this.state.newTask);
+      this.setState({
+        newTask: "",
+      });
+    }
   };
 
   render() {

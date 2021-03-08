@@ -15,6 +15,14 @@ class TodoList extends React.Component {
           );
         })}
         <button onClick={() => this.props.clearAll()}> Clear all tasks </button>
+        <button onClick={() => this.props.deleteAll()}>
+          {" "}
+          Delete all tasks{" "}
+        </button>
+        <button onClick={() => this.props.filterAction()}>
+          {" "}
+          Delete completed tasks{" "}
+        </button>
       </div>
     );
   }

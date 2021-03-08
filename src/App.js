@@ -35,6 +35,16 @@ class App extends React.Component {
     });
   };
 
+  deleteAll = () => {
+    this.setState({ tasks: [] });
+  };
+
+  filterAction = () => {
+    this.setState({
+      tasks: this.state.tasks.filter((task) => !task.completed),
+    });
+  };
+
   toggleTask = (clickedOnId) => {
     this.setState({
       tasks: this.state.tasks.map((task) => {
@@ -71,6 +81,8 @@ class App extends React.Component {
             tasks={this.state.tasks}
             toggleTask={this.toggleTask}
             clearAll={this.clearAll}
+            deleteAll={this.deleteAll}
+            filterAction={this.filterAction}
           />
         </div>
       </div>
